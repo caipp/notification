@@ -12,6 +12,7 @@ COPY . .
 ENV GO111MODULE=on
 ENV CGO_ENABLED=0
 ENV GOOS=linux
+ENV GOPROXY=https://goproxy.cn
 
 RUN mkdir -p /openpitrix_bin
 RUN go build -v -a -installsuffix cgo -ldflags '-w' -o /openpitrix_bin/notification cmd/notification/main.go
